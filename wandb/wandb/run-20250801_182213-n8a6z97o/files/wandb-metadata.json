@@ -1,0 +1,37 @@
+{
+  "os":  "macOS-15.5-arm64-arm-64bit",
+  "python":  "CPython 3.12.7",
+  "startedAt":  "2025-08-01T16:22:13.235935Z",
+  "program":  "/Users/harun/Desktop/Bachelorarbeit/bachelorarbeit/wandb/tabpfn_wandb.py",
+  "codePath":  "wandb/tabpfn_wandb.py",
+  "codePathLocal":  "tabpfn_wandb.py",
+  "git":  {
+    "remote":  "git@github.com:harun1602/bachelorarbeit.git",
+    "commit":  "8dca320ea555da6075d57058fca0b54de7694cad"
+  },
+  "email":  "cebeci08harun08@gmail.com",
+  "root":  "/Users/harun/Desktop/Bachelorarbeit/bachelorarbeit/wandb",
+  "host":  "eduroam-55-32-93.eduroam.ruhr-uni-bochum.de",
+  "executable":  "/opt/anaconda3/bin/python",
+  "cpu_count":  12,
+  "cpu_count_logical":  12,
+  "disk":  {
+    "/":  {
+      "total":  "494384795648",
+      "used":  "235478089728"
+    }
+  },
+  "memory":  {
+    "total":  "25769803776"
+  },
+  "apple":  {
+    "name":  "Apple M4 Pro",
+    "ecpuCores":  4,
+    "pcpuCores":  8,
+    "gpuCores":  16,
+    "memoryGb":  24,
+    "swapTotalBytes":  "2147483648",
+    "ramTotalBytes":  "25769803776"
+  },
+  "writerId":  "x2rxngv3y0xu5ska6865mmetf7zz0ode"
+}

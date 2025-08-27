@@ -1,0 +1,63 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            gc1wp5s28y9mzy4l1g873uf8sm40h6i3:
+                apple:
+                    ecpuCores: 4
+                    gpuCores: 16
+                    memoryGb: 24
+                    name: Apple M4 Pro
+                    pcpuCores: 8
+                    ramTotalBytes: "25769803776"
+                    swapTotalBytes: "2147483648"
+                codePath: wandb/tabpfn_wandb.py
+                codePathLocal: tabpfn_wandb.py
+                cpu_count: 12
+                cpu_count_logical: 12
+                disk:
+                    /:
+                        total: "494384795648"
+                        used: "235478761472"
+                email: cebeci08harun08@gmail.com
+                executable: /opt/anaconda3/bin/python
+                git:
+                    commit: 8dca320ea555da6075d57058fca0b54de7694cad
+                    remote: git@github.com:harun1602/bachelorarbeit.git
+                host: eduroam-55-32-93.eduroam.ruhr-uni-bochum.de
+                memory:
+                    total: "25769803776"
+                os: macOS-15.5-arm64-arm-64bit
+                program: /Users/harun/Desktop/Bachelorarbeit/bachelorarbeit/wandb/tabpfn_wandb.py
+                python: CPython 3.12.7
+                root: /Users/harun/Desktop/Bachelorarbeit/bachelorarbeit/wandb
+                startedAt: "2025-08-01T16:20:22.680112Z"
+                writerId: gc1wp5s28y9mzy4l1g873uf8sm40h6i3
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+            "2":
+                - 1
+                - 5
+                - 49
+                - 53
+            "3":
+                - 14
+            "4": 3.12.7
+            "5": 0.21.0
+            "12": 0.21.0
+            "13": darwin-arm64
+dataset:
+    value: combined
+n_permutations:
+    value: 1
+quantil:
+    value: 0.05622090079913347
+scaling:
+    value: standard
+train_size:
+    value: 50

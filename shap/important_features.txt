@@ -1,0 +1,156 @@
+Top 50 Features nach mittlerem |SHAP| run wandering-sweep-903:
+ 1. 0_Peak to peak distance                            0.0014
+ 2. 0_LPCC_0                                           0.0013
+ 3. 0_Min                                              0.0012
+ 4. 1_power_per_sec                                    0.0009
+ 5. 0_Spectrogram mean coefficient_161.29Hz            0.0009
+ 6. 0_Wavelet standard deviation_500.0Hz               0.0009
+ 7. 0_Spectral skewness                                0.0008
+ 8. 1_std_abs                                          0.0007
+ 9. 0_Max                                              0.0007
+10. 0_Spectrogram mean coefficient_612.9Hz             0.0007
+11. 0_Spectral kurtosis                                0.0006
+12. 0_Wavelet energy_125.0Hz                           0.0006
+13. 0_Wavelet standard deviation_100.0Hz               0.0006
+14. 0_Wavelet energy_100.0Hz                           0.0006
+15. 0_Wavelet standard deviation_125.0Hz               0.0005
+16. 0_Spectrogram mean coefficient_387.1Hz             0.0005
+17. 1_norm_dwt_level_6                                 0.0005
+18. 0_Wavelet energy_166.67Hz                          0.0005
+19. 0_Spectrogram mean coefficient_225.81Hz            0.0005
+20. 0_Maximum frequency                                0.0004
+21. 0_Spectral spread                                  0.0004
+22. 0_LPCC_2                                           0.0004
+23. 0_Spectrogram mean coefficient_451.61Hz            0.0004
+24. 0_ECDF_1                                           0.0004
+25. 0_MFCC_2                                           0.0004
+26. 0_Median absolute deviation                        0.0004
+27. 0_Wavelet absolute mean_500.0Hz                    0.0004
+28. 0_Wavelet variance_100.0Hz                         0.0004
+29. 0_Spectral centroid                                0.0004
+30. 1_norm_dwt_level_3                                 0.0004
+31. 0_Interquartile range                              0.0004
+32. 0_Wavelet absolute mean_125.0Hz                    0.0004
+33. 0_ECDF_8                                           0.0004
+34. 0_Wavelet standard deviation_71.43Hz               0.0004
+35. 0_MFCC_1                                           0.0004
+36. 0_Variance                                         0.0004
+37. 0_Spectrogram mean coefficient_516.13Hz            0.0003
+38. 0_Wavelet standard deviation_250.0Hz               0.0003
+39. 0_Wavelet variance_62.5Hz                          0.0003
+40. 0_MFCC_0                                           0.0003
+41. 0_Spectrogram mean coefficient_645.16Hz            0.0003
+42. 0_LPCC_11                                          0.0003
+43. 0_ECDF_5                                           0.0003
+44. 0_LPCC_10                                          0.0003
+45. 0_Wavelet standard deviation_83.33Hz               0.0003
+46. 0_ECDF_6                                           0.0003
+47. 0_Wavelet standard deviation_62.5Hz                0.0003
+48. 0_Spectrogram mean coefficient_580.65Hz            0.0003
+49. 0_MFCC_6                                           0.0003
+50. 0_Wavelet variance_166.67Hz                        0.0003
+
+Top 50 Features nach mittlerem |SHAP| run 
+sleek-sweep-370:
+ 1. 0_Min                                              0.0020
+ 2. 0_Max                                              0.0018
+ 3. 0_MFCC_0                                           0.0010
+ 4. 0_Peak to peak distance                            0.0007
+ 5. 0_Spectral skewness                                0.0007
+ 6. 1_std_abs                                          0.0007
+ 7. 0_LPCC_2                                           0.0007
+ 8. 0_Wavelet variance_500.0Hz                         0.0007
+ 9. 0_ECDF_4                                           0.0006
+10. 0_Spectrogram mean coefficient_193.55Hz            0.0006
+11. 0_Wavelet variance_250.0Hz                         0.0006
+12. 0_Spectrogram mean coefficient_451.61Hz            0.0006
+13. 0_Spectral kurtosis                                0.0006
+14. 0_Variance                                         0.0006
+15. 0_Standard deviation                               0.0006
+16. 0_ECDF_8                                           0.0005
+17. 0_Spectrogram mean coefficient_677.42Hz            0.0005
+18. 1_norm_dwt_0                                       0.0005
+19. 0_ECDF_1                                           0.0005
+20. 0_Wavelet variance_166.67Hz                        0.0005
+21. 0_Spectral roll-off                                0.0005
+22. 0_Absolute energy                                  0.0005
+23. 0_Maximum frequency                                0.0005
+24. 0_Wavelet energy_500.0Hz                           0.0005
+25. 0_ECDF_5                                           0.0004
+26. 0_Spectrogram mean coefficient_580.65Hz            0.0004
+27. 0_Wavelet energy_250.0Hz                           0.0004
+28. 0_LPCC_11                                          0.0004
+29. 0_Spectrogram mean coefficient_548.39Hz            0.0004
+30. 0_Spectrogram mean coefficient_96.77Hz             0.0004
+31. 0_Sum absolute diff                                0.0004
+32. 0_Wavelet standard deviation_125.0Hz               0.0004
+33. 0_Wavelet energy_62.5Hz                            0.0004
+34. 0_Spectral slope                                   0.0004
+35. 0_Wavelet variance_71.43Hz                         0.0004
+36. 0_Spectrogram mean coefficient_0.0Hz               0.0004
+37. 1_var_amp_fluc                                     0.0003
+38. 0_Spectrogram mean coefficient_870.97Hz            0.0003
+39. 0_Wavelet variance_55.56Hz                         0.0003
+40. 0_LPCC_10                                          0.0003
+41. 0_Wavelet standard deviation_83.33Hz               0.0003
+42. 0_Spectrogram mean coefficient_387.1Hz             0.0003
+43. 0_Spectrogram mean coefficient_903.23Hz            0.0003
+44. 0_Spectral decrease                                0.0003
+45. 0_Spectrogram mean coefficient_483.87Hz            0.0003
+46. 0_LPCC_0                                           0.0003
+47. 0_Spectrogram mean coefficient_225.81Hz            0.0003
+48. 0_Spectral spread                                  0.0003
+49. 0_Centroid                                         0.0003
+50. 0_Wavelet variance_125.0Hz                         0.0003
+
+Top 50 Features nach mittlerem |SHAP| run mild-sweep-237:
+ 1. 0_Peak to peak distance                            0.0023
+ 2. 0_Min                                              0.0011
+ 3. 0_Spectral spread                                  0.0010
+ 4. 1_power_per_sec                                    0.0009
+ 5. 1_norm_dwt_level_6                                 0.0009
+ 6. 0_Spectral kurtosis                                0.0008
+ 7. 0_LPCC_1                                           0.0007
+ 8. 0_Max                                              0.0007
+ 9. 0_Spectral roll-off                                0.0007
+10. 0_Sum absolute diff                                0.0007
+11. 0_Wavelet energy_166.67Hz                          0.0006
+12. 0_Spectral centroid                                0.0006
+13. 0_Wavelet variance_250.0Hz                         0.0005
+14. 0_Mean absolute diff                               0.0005
+15. 1_norm_dwt_level_5                                 0.0005
+16. 0_Interquartile range                              0.0005
+17. 0_ECDF_1                                           0.0005
+18. 0_Wavelet standard deviation_83.33Hz               0.0005
+19. 0_LPCC_11                                          0.0005
+20. 0_Spectrogram mean coefficient_258.06Hz            0.0005
+21. 0_LPCC_10                                          0.0004
+22. 0_Spectrogram mean coefficient_612.9Hz             0.0004
+23. 0_Spectral slope                                   0.0004
+24. 1_norm_phs                                         0.0004
+25. 0_Spectrogram mean coefficient_677.42Hz            0.0004
+26. 0_Wavelet variance_500.0Hz                         0.0004
+27. 0_Spectrogram mean coefficient_354.84Hz            0.0004
+28. 0_LPCC_0                                           0.0004
+29. 0_Wavelet standard deviation_100.0Hz               0.0004
+30. 0_Standard deviation                               0.0004
+31. 0_Wavelet variance_62.5Hz                          0.0004
+32. 0_Spectrogram mean coefficient_225.81Hz            0.0004
+33. 0_Spectrogram mean coefficient_290.32Hz            0.0004
+34. 0_Wavelet standard deviation_500.0Hz               0.0004
+35. 0_Average power                                    0.0004
+36. 0_Spectrogram mean coefficient_451.61Hz            0.0004
+37. 0_Wavelet energy_71.43Hz                           0.0003
+38. 0_MFCC_3                                           0.0003
+39. 0_Wavelet variance_166.67Hz                        0.0003
+40. 0_ECDF_2                                           0.0003
+41. 0_Area under the curve                             0.0003
+42. 0_Spectral skewness                                0.0003
+43. 0_Wavelet energy_100.0Hz                           0.0003
+44. 0_Variance                                         0.0003
+45. 0_Spectral variation                               0.0003
+46. 0_LPCC_2                                           0.0003
+47. 0_Wavelet standard deviation_250.0Hz               0.0003
+48. 0_Spectrogram mean coefficient_32.26Hz             0.0003
+49. 0_ECDF Percentile_0                                0.0003
+50. 1_std_abs                                          0.0003

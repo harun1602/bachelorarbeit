@@ -1,0 +1,12 @@
+wandb_version: 1
+
+dataset:
+  value: normal
+n_permutations:
+  value: 1
+quantil:
+  value: 0.07096123770002932
+scaling:
+  value: minmax
+train_size:
+  value: 30

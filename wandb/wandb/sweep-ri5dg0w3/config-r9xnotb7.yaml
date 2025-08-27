@@ -1,0 +1,12 @@
+wandb_version: 1
+
+dataset:
+  value: combined
+n_permutations:
+  value: 1
+quantil:
+  value: 0.05622090079913347
+scaling:
+  value: standard
+train_size:
+  value: 50
