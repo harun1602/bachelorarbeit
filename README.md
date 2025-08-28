@@ -31,4 +31,4 @@ Argumente:
 --scaling       required = False, default = raw, minmax, standard, {raw, minmax, standard}
 
 Beispiel Ausführung:  
-main_wandb.py --modell knn --projectname pyod-knn-bayes --count 2000 --n_train 47500 --enable_n_train_split --n_train_step 1000
+python main_wandb.py --modell knn --projectname pyod-knn-bayes --count 2000 --n_train 47500 --enable_n_train_split --n_train_step 1000
