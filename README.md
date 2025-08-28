@@ -25,7 +25,10 @@ Argumente:
 --enable_n_train_split if set, Training Data will be split into Data into Blocks of X\*n_trian_step up to n_train  
 --n_train_step  required = True if --enable_n_train_split is set, default = 1000, {1000, 0.95\*n_train}  
 --sweep_method  required = False, default = bayes, {bayes, random, grid}  
---metric_name   required = False, default = accuracy, {accuracy, f1, youden_j}  
+--metric_name   required = False, default = accuracy, {accuracy, f1}  
 --metric_goal   required = False, default = maximize, {maximize, minimize}  
 --dataset       required = False, default = normal, features, combined, fouriers, {normal, features, combined, fouriers}  
---scaling       required = False, default = raw, {raw, minmax, standard} 
+--scaling       required = False, default = raw, minmax, standard, {raw, minmax, standard}
+
+Beispiel Ausführung:  
+main_wandb.py --modell knn --projectname pyod-knn-bayes --count 2000 --n_train 47500 --enable_n_train_split --n_train_step 1000
