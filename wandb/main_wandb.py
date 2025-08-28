@@ -27,16 +27,16 @@ from pyod.models.lunar import LUNAR
 
 datasets_info = {
     'normal': {
-        'file_path':    "../datasets/transients_processed.npz"
+        'file_path':    "../datasets/processed_data/transients_processed.npz"
     },
     'features': {
-        'file_path':    "../datasets/features_processed.npz"
+        'file_path':    "../datasets/processed_data/features_processed.npz"
     },
     'combined': {
-        'file_path':    "../datasets/combined_processed.npz"
+        'file_path':    "../datasets/processed_data/combined_processed.npz"
     },
     'fouriers': {
-        'file_path':    "../datasets/fouriers_processed.npz"
+        'file_path':    "../datasets/processed_data/fouriers_processed.npz"
     }
 }
 
