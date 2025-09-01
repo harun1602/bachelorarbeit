@@ -182,7 +182,7 @@ def load_dataset(name, current_n_train, scaling):
         data_relay = f["relay"]
 
     n_test_each = int(math.floor(0.05 * current_n_train))
-    train_data = data_normal[:current_n_train]
+    X_train = data_normal[:current_n_train]
     test_normal = data_normal[-n_test_each:]
     test_relay = data_relay[-n_test_each:]
 
@@ -191,16 +191,18 @@ def load_dataset(name, current_n_train, scaling):
 
     if scaling == 'minmax':
         scaler = MinMaxScaler()
-        train_data = scaler.fit_transform(train_data)
+        X_train = scaler.fit_transform(X_train)
         X_test = scaler.transform(X_test)
     elif scaling == 'standard':
         scaler = StandardScaler()
-        train_data = scaler.fit_transform(train_data)
+        X_train = scaler.fit_transform(X_train)
         X_test = scaler.transform(X_test)
 
-    return train_data, X_test, y_test
+    return X_train, X_test, y_test
 
-def evaluate_and_log(clf, model_name, y_test, X_test, runtime):
+def evaluate_and_log(clf, model_name, y_test, X_test):
+    start_time = time.time()
+
     y_pred = clf.predict(X_test)
     y_scores = clf.decision_function(X_test)
     run_name = wandb.run.name
@@ -230,12 +232,13 @@ def evaluate_and_log(clf, model_name, y_test, X_test, runtime):
     fig_cm.tight_layout()
     plt.close(fig_cm)
 
+    runtime = time.time() - start_time
     wandb.log({
         "accuracy": acc,
         "f1": f1,
         "classification_report": wandb.Html(f"<pre>{clf_report}</pre>"),
         "confusion_matrix": wandb.Image(fig_cm),
-        "runtime_min": runtime / 60.0,
+        "pred_runtime": runtime,
         "roc": roc,
         "auc": auc
     })
@@ -243,7 +246,6 @@ def evaluate_and_log(clf, model_name, y_test, X_test, runtime):
 # trainingsfunktion für sweep
 def train(config=None):
     with wandb.init(config=config):
-        start_time = time.time()
         cfg = wandb.config
         modell = cfg.get("modell")
         dataset = cfg.get("dataset")
@@ -332,8 +334,7 @@ def train(config=None):
         else:
             raise NotImplementedError(f"Modell '{modell}' nicht implementiert.")
 
-        runtime = time.time() - start_time
-        evaluate_and_log(clf, modell, y_test, X_test, runtime=runtime)
+        evaluate_and_log(clf, modell, y_test, X_test)
 
 def main():
     parser = argparse.ArgumentParser()
