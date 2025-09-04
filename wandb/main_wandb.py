@@ -22,7 +22,6 @@ from pyod.models.lof import LOF
 from pyod.models.iforest import IForest
 from pyod.models.gmm import GMM
 from pyod.models.auto_encoder import AutoEncoder
-from pyod.models.deep_svdd import DeepSVDD
 from pyod.models.lunar import LUNAR
 
 datasets_info = {
@@ -132,26 +131,6 @@ SWEEPS = {
             'n_train':                {'values': []},
             }
         },
-    "deepsvdd":
-        {
-        'method':               {},
-        'metric':               {},
-        'parameters':
-            {
-            'contamination':    {'min': 0.01, 'max': 0.15},
-            'preprocessing':    {'values': [True, False]},
-            'n_features':       {'values': [151, 173, 324]},
-            'epochs':           {'value': 30},
-            'batch_size':       {'distribution': 'int_uniform', 'min': 32, 'max': 128},
-            'hidden_neurons':   {'values': [[64, 32], [128, 64], [256, 128], [256, 64], [128, 64, 32], [256, 128, 64, 32]]},
-            'hidden_activation':{'values': ['relu', 'tanh', 'sigmoid']},
-            'output_activation':{'values': ['relu', 'tanh', 'sigmoid']},
-            'dropout_rate':     {'distribution': 'uniform', 'min': 0.0001, 'max': 1.0},
-            'l2_regularizer':   {'distribution': 'uniform', 'min': 0.001, 'max': 0.2},
-            'scaling':          {'values': []},
-            'n_train':          {'values': []},
-            }
-        },
     "lunar":
         {
         'method':                {},
@@ -216,10 +195,15 @@ def load_dataset(name, current_n_train, scaling):
     return X_train, X_test, y_test
 
 def evaluate_and_log(clf, model_name, y_test, X_test):
+    # startet laufzeit
     start_time = time.time()
 
     y_pred = clf.predict(X_test)
     y_scores = clf.decision_function(X_test)
+
+    # berechnet vergangene zeit
+    runtime = time.time() - start_time
+
     run_name = wandb.run.name
 
     # accuracy score, classification report
@@ -247,7 +231,6 @@ def evaluate_and_log(clf, model_name, y_test, X_test):
     fig_cm.tight_layout()
     plt.close(fig_cm)
 
-    runtime = time.time() - start_time
     wandb.log({
         "accuracy": acc,
         "f1": f1,
@@ -318,19 +301,6 @@ def train(config=None):
                 preprocessing=bool(cfg.get("preprocessing"))
             )
             clf.fit(X_train)
-        elif modell == "deepsvdd":
-            clf = DeepSVDD(
-                hidden_neurons=cfg.get("hidden_neurons"),
-                hidden_activation=cfg.get("hidden_activation"),
-                output_activation=cfg.get("output_activation"),
-                dropout_rate=cfg.get("dropout_rate"),
-                l2_regularizer=cfg.get("l2_regularizer"),
-                n_features=cfg.get("n_features"),
-                epochs=int(cfg.get("epochs")),
-                batch_size=int(cfg.get("batch_size")),
-                preprocessing=bool(cfg.get("preprocessing"))
-            )
-            clf.fit(X_train)
         elif modell == "lunar":
             clf = LUNAR(
                 n_neighbours=int(cfg.get("n_neighbours")),
@@ -358,7 +328,7 @@ def main():
                         type=str,
                         required=True,
                         choices=list(SWEEPS.keys()),
-                        help=f"Welches Modell benutzen (knn, lof, gmm, if, autoencoder, deepsvdd, lunar)\ndefault: {list(SWEEPS.keys())}")
+                        help=f"Welches Modell benutzen (knn, lof, gmm, if, autoencoder, lunar)\ndefault: {list(SWEEPS.keys())}")
     parser.add_argument(
                         "--count",
                         type=int,
