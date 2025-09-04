@@ -40,16 +40,19 @@ datasets_info = {
     }
 }
 
-ALLOWED_METRICS = {"accuracy", "f1", "youden_j"}
+ALLOWED_METHODS = {"bayes", "random", "grid"}
+ALLOWED_METRICS = {"accuracy", "f1", "auc"}
 ALLOWED_SCALINGS = {"raw", "minmax", "standard"}
 ALLOWED_DATASETS = {"normal", "features", "combined", "fouriers"}
 
 # basis-Sweeps (werden zur laufzeit überschrieben/angepasst)
 SWEEPS = {
-    "knn": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+    "knn":
+        {
+        'method':            {},
+        'metric':            {},
+        'parameters':
+            {
             'radius':        {'min': 10, 'max': 50},
             'method':        {'values': ['largest', 'median']},
             'n_neighbors':   {'min': 1, 'max': 300},
@@ -58,14 +61,16 @@ SWEEPS = {
             'algorithm':     {'values': ['auto']},
             'metric':        {'values': ["euclidean", "minkowski"]},
             'dataset':       {'values': ['normal', 'features', 'combined']},
-            'scaling':       {'values': ['minmax', 'standard', 'raw']},
+            'scaling':       {'values': []},
             'n_train':       {'values': []},
-        }
-    },
-    "lof": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+            }
+        },
+    "lof":
+        {
+        'method':            {},
+        'metric':            {},
+        'parameters':
+            {
             'n_neighbors':   {'min': 1,    'max': 800},
             'contamination': {'min': 0.01, 'max': 0.15},
             'leaf_size':     {'min': 1,    'max': 200},
@@ -73,41 +78,47 @@ SWEEPS = {
             'novelty':       {'values': [True]},
             'metric':        {'values': ["euclidean", "manhattan", "chebyshev", "minkowski"]},
             'dataset':       {'values': ['normal', 'features', 'combined']},
-            'scaling':       {'values': ['raw', 'minmax', 'standard']},
+            'scaling':       {'values': []},
             'n_train':       {'values': []},
-        }
-    },
-    "gmm": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+            }
+        },
+    "gmm":
+        {
+        'method':              {},
+        'metric':              {},
+        'parameters':
+            {
             'n_components':    {'min': 1,     'max': 100},
             'contamination':   {'min': 0.01,  'max': 0.15},
-            'reg_covar':       {'min': 1e-07, 'max': 1e-04},
+            'reg_covar':       {'min': 1e-06, 'max': 1e-04},
             'max_iter':        {'value': 1000},
             'tol':             {'min': 1e-04, 'max': 1e-02},
             'covariance_type': {'values': ['full', 'tied', 'diag', 'spherical']},
             'dataset':         {'values': ['normal', 'features', 'combined']},
-            'scaling':         {'values': ['raw', 'minmax', 'standard']},
+            'scaling':         {'values': []},
             'n_train':         {'values': []},
-        }
-    },
-    "if": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+            }
+        },
+    "if":
+        {
+        'method':            {},
+        'metric':            {},
+        'parameters':
+            {
             'contamination': {'min': 0.01, 'max': 0.15},
             'n_estimators':  {'min': 200, 'max': 1000},
             'behaviour':     {'values': ['new', 'old']},
             'dataset':       {'value': 'features'},
-            'scaling':       {'values': ['raw', 'minmax', 'standard']},
+            'scaling':       {'values': []},
             'n_train':       {'values': []},
-        }
-    },
-    "autoencoder": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+            }
+        },
+    "autoencoder":
+        {
+        'method':              {},
+        'metric':              {},
+        'parameters':
+            {
             'contamination':          {'min': 0.01,  'max': 0.15},
             'preprocessing':          {'values': [True, False]},
             'lr':                     {'distribution': 'log_uniform', 'min': 1e-08, 'max': 1e-02},
@@ -117,14 +128,16 @@ SWEEPS = {
             'hidden_activation_name': {'values': ['relu', 'tanh', 'sigmoid']},
             'dropout_rate':           {'distribution': 'uniform', 'min': 0.0001, 'max': 1.0},
             'dataset':                {'values': ['normal', 'features', 'combined']},
-            'scaling':                {'values': ['raw', 'minmax', 'standard']},
+            'scaling':                {'values': []},
             'n_train':                {'values': []},
-        }
-    },
-    "deepsvdd": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+            }
+        },
+    "deepsvdd":
+        {
+        'method':               {},
+        'metric':               {},
+        'parameters':
+            {
             'contamination':    {'min': 0.01, 'max': 0.15},
             'preprocessing':    {'values': [True, False]},
             'n_features':       {'values': [151, 173, 324]},
@@ -135,14 +148,16 @@ SWEEPS = {
             'output_activation':{'values': ['relu', 'tanh', 'sigmoid']},
             'dropout_rate':     {'distribution': 'uniform', 'min': 0.0001, 'max': 1.0},
             'l2_regularizer':   {'distribution': 'uniform', 'min': 0.001, 'max': 0.2},
-            'scaling': {'values': ['raw', 'minmax', 'standard']},
+            'scaling':          {'values': []},
             'n_train':          {'values': []},
-        }
-    },
-    "lunar": {
-        'method': 'bayes',
-        'metric': {'name': 'accuracy', 'goal': 'maximize'},
-        'parameters': {
+            }
+        },
+    "lunar":
+        {
+        'method':                {},
+        'metric':                {},
+        'parameters':
+            {
             'n_neighbours':      {'min': 1,    'max': 1000},
             'model_type':        {'values': ["WEIGHT"]},
             'negative_sampling': {'values': ['UNIFORM', 'SUBSPACE', 'MIXED']},
@@ -153,11 +168,11 @@ SWEEPS = {
             'n_epochs':          {'min': 100, 'max': 500},
             'lr':                {'min': 0.001,'max': 0.01},
             'wd':                {'min': 0.2, 'max': 1.0},
-            'scaler':            {'values': ['MinMaxScaler', 'StandardScaler']},
             'dataset':           {'values': ['normal', 'features', 'combined']},
+            'scaling':           {'values': []},
             'n_train':           {'values': []},
+            }
         }
-    }
 }
 
 # returned N = anzahl samples im normal-set (relay hat gleiche länge)
@@ -181,8 +196,8 @@ def load_dataset(name, current_n_train, scaling):
         data_normal = f["normal"]
         data_relay = f["relay"]
 
-    n_test_each = int(math.floor(0.05 * current_n_train))
     X_train = data_normal[:current_n_train]
+    n_test_each = int(math.floor(0.05 * current_n_train))
     test_normal = data_normal[-n_test_each:]
     test_relay = data_relay[-n_test_each:]
 
@@ -239,7 +254,7 @@ def evaluate_and_log(clf, model_name, y_test, X_test):
         "classification_report": wandb.Html(f"<pre>{clf_report}</pre>"),
         "confusion_matrix": wandb.Image(fig_cm),
         "pred_runtime": runtime,
-        "roc": roc,
+        "roc": wandb.Image(roc),
         "auc": auc
     })
 
@@ -328,7 +343,7 @@ def train(config=None):
                 n_epochs=int(cfg.get("n_epochs")),
                 lr=cfg.get("lr"),
                 wd=cfg.get("wd"),
-                scaler=cfg.get("scaler")
+                scaler=StandardScaler()
             )
             clf.fit(X_train)
         else:
@@ -359,7 +374,7 @@ def main():
                         "--sweep_method",
                         type=str,
                         default="bayes",
-                        choices={"bayes", "random", "grid"},
+                        choices=list(ALLOWED_METHODS),
                         help="Sweep-Optimierungsmethode (bayes, random, grid)\ndefault: bayes"
                         )
     parser.add_argument(
@@ -367,7 +382,7 @@ def main():
                         type=str,
                         default="accuracy",
                         choices=list(ALLOWED_METRICS),
-                        help="Metrik für die Sweep-Auswertung (accuracy, f1, youden_j)\ndefault: accuracy"
+                        help="Metrik für die Sweep-Auswertung (accuracy, f1, auc)\ndefault: accuracy"
                         )
     parser.add_argument(
                         "--metric_goal",
@@ -460,14 +475,14 @@ def main():
         n_train_values = [user_n_train]
 
     # sweep-konfiguration vorbereiten/überschreiben
-    sweep_conf = SWEEPS[modell].copy()
-    sweep_conf['method'] = args.sweep_method
-    sweep_conf['metric'] = {'name': args.metric_name, 'goal': args.metric_goal}
-    sweep_conf['parameters'] = sweep_conf['parameters'].copy()
+    sweep_conf                          = SWEEPS[modell].copy()
+    sweep_conf['method']                = args.sweep_method
+    sweep_conf['metric']                = {'name': args.metric_name, 'goal': args.metric_goal}
+    sweep_conf['parameters']            = sweep_conf['parameters'].copy()
     sweep_conf['parameters']['dataset'] = {'values': args.dataset}
     sweep_conf['parameters']['scaling'] = {'values': args.scaling}
     sweep_conf['parameters']['n_train'] = {'values': n_train_values}
-    sweep_conf['parameters']['modell'] = {'value': args.modell}
+    sweep_conf['parameters']['modell']  = {'value' : args.modell}
 
     # sweep starten
     sweep_id = wandb.sweep(sweep_conf, project=args.projectname)
